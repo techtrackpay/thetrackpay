@@ -214,9 +214,22 @@ export function CinematicHero({
 }: CinematicHeroProps) {
   
   const [email, setEmail] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      return localStorage.getItem("trackpay_waitlist_joined") === "true";
+    } catch {
+      return false;
+    }
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleSync = () => setIsSubmitted(true);
+    window.addEventListener("trackpay_waitlist_joined", handleSync);
+    return () => window.removeEventListener("trackpay_waitlist_joined", handleSync);
+  }, []);
 
   // Gate the desktop-only extras (mouse parallax, film-grain, scroll blur) to
   // capable devices. The WebGL "tubes" cursor background has been removed
@@ -291,6 +304,12 @@ export function CinematicHero({
 
       if (response.ok) {
         setIsSubmitted(true);
+        try {
+          localStorage.setItem("trackpay_waitlist_joined", "true");
+          window.dispatchEvent(new Event("trackpay_waitlist_joined"));
+        } catch (e) {
+          console.warn("Could not save to localStorage", e);
+        }
         alert("🎉 Success! You have been successfully added to the TrackPay waitlist.");
       } else {
         const errorText = await response.text();
