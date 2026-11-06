@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The TrackPay Journal</title>
+    <link>https://www.thetrackpay.com/journal</link>
+    <description>Ideas behind the product, everyday money moments, and the financial intelligence layer we are building for India.</description>
+    <language>en-in</language>
+    <lastBuildDate>Fri, 06 Nov 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.thetrackpay.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Your money moves across apps. Your understanding should travel with it.</title>
+      <link>https://www.thetrackpay.com/journal/connected</link>
+      <guid>https://www.thetrackpay.com/journal/connected</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+      <category>The connected picture</category>
+      <description>Why we are bringing payments and the bigger financial picture into the same conversation.</description>
+    </item>
+
+    <item>
+      <title>A goal is more useful when you can play with the plan.</title>
+      <link>https://www.thetrackpay.com/journal/goals</link>
+      <guid>https://www.thetrackpay.com/journal/goals</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+      <category>Room for your plans</category>
+      <description>Change the date. See the monthly commitment. Make the trade-off visible before you decide.</description>
+    </item>
+
+    <item>
+      <title>A better money conversation starts with your question.</title>
+      <link>https://www.thetrackpay.com/journal/conversation</link>
+      <guid>https://www.thetrackpay.com/journal/conversation</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0000</pubDate>
+      <category>Building Artha AI</category>
+      <description>Everyday language, visible reasoning and a little more room to think.</description>
+    </item>
+  </channel>
+</rss>
