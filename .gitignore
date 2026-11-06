@@ -27,3 +27,4 @@ dist-ssr
 graphify-out/
 .agents/
 .gemini/
+artifacts/design-qa/

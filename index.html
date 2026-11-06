@@ -5,9 +5,16 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/jpeg" href="/image/Trackpay.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    let savedTheme;
+    try { savedTheme = localStorage.getItem('trackpay-theme'); } catch { /* Storage may be unavailable in private contexts. */ }
+    const initialTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = initialTheme;
+    document.documentElement.style.colorScheme = initialTheme;
+  </script>
   <title>TrackPay | TheTrackPay — The Payment App with a Financial Intelligence Layer for India</title>
   <meta name="description"
-    content="TrackPay (also known as TheTrackPay) is the payment app with a financial intelligence layer for India. Track, analyze, and automate your money flow and payments in real-time." />
+    content="Meet TrackPay: UPI payments, a unified view of your financial activity and Artha AI. Explore interactive previews of a more connected money experience for India." />
   <meta name="keywords"
     content="TrackPay, TheTrackPay, financial intelligence, payment app India, payment tracker, financial management, money automation" />
 

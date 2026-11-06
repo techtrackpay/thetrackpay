@@ -37,4 +37,9 @@
   <priority>0.80</priority>
 </url>
 
+<url><loc>https://www.thetrackpay.com/faq</loc><priority>0.80</priority></url>
+<url><loc>https://www.thetrackpay.com/journal</loc><priority>0.80</priority></url>
+<url><loc>https://www.thetrackpay.com/journal/connected</loc><priority>0.60</priority></url>
+<url><loc>https://www.thetrackpay.com/journal/goals</loc><priority>0.60</priority></url>
+<url><loc>https://www.thetrackpay.com/journal/conversation</loc><priority>0.60</priority></url>
 </urlset>
