@@ -39,7 +39,7 @@ The existing local React/Vite website has been redesigned around TrackPay's orig
 
 ## Dark mode and affiliation follow-up
 
-- Added a keyboard-accessible sun/moon switch on the right of the shared header. First visits follow the OS color scheme; an explicit choice persists in localStorage across navigation and reloads. Storage failures do not disable the switch.
+- Added a keyboard-accessible sun/moon switch on the right of the shared header. First visits default to light mode; an explicit choice persists in localStorage across navigation and reloads. Storage failures do not disable the switch.
 - Added the existing Nirmaan logo and “Currently Pre-Incubating at Nirmaan IITM” beside TrackPay, separated by a vertical divider. Desktop navigation collapses earlier to preserve space for the affiliation; mobile retains both logos and the theme control.
 - Dark styling covers all ten website routes, phone illustrations, feature panels, journal articles, FAQ controls and form fields. Corrected an inherited light-theme article-heading color found during screenshot review.
 - Production build and changed-component lint passed. Expanded browser checks cover 61 route/theme/viewport combinations, keyboard switching, saved preferences overriding the OS preference, restored light colors, responsive header bounds and dark phone interactions.

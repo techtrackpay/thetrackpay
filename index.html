@@ -8,7 +8,7 @@
   <script>
     let savedTheme;
     try { savedTheme = localStorage.getItem('trackpay-theme'); } catch { /* Storage may be unavailable in private contexts. */ }
-    const initialTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
     document.documentElement.dataset.theme = initialTheme;
     document.documentElement.style.colorScheme = initialTheme;
   </script>

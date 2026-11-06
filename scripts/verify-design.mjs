@@ -143,7 +143,8 @@ try {
   await send('Emulation.setEmulatedMedia', { features: [{name:'prefers-color-scheme',value:'dark'}, {name:'prefers-reduced-motion',value:'reduce'}] });
   await evaluate("localStorage.removeItem('trackpay-theme')");
   await navigate('/');
-  assert.equal(await evaluate('document.documentElement.dataset.theme'), 'dark', 'Follow system preference on first visit');
+  assert.equal(await evaluate('document.documentElement.dataset.theme'), 'light', 'Default to light even when the OS prefers dark');
+  await click('.tp-theme-toggle');
   await evaluate("document.querySelector('.tp-theme-toggle').focus()");
   await send('Input.dispatchKeyEvent', {type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,text:'\r'});
   await send('Input.dispatchKeyEvent', {type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
@@ -174,7 +175,7 @@ try {
   await click('.tp-theme-toggle');
   assert.equal(await evaluate('document.documentElement.dataset.theme'), 'light');
   assert.equal(await evaluate("getComputedStyle(document.querySelector('.tp-site')).backgroundColor"), 'rgb(252, 250, 247)');
-  report.interactions.push('System theme, keyboard switch, saved preference across reload/navigation, dark phone interaction, light-mode restoration and responsive Nirmaan badge');
+  report.interactions.push('Light default, keyboard switch, saved preference across reload/navigation, dark phone interaction, light-mode restoration and responsive Nirmaan badge');
   assert.deepEqual(report.errors, [], 'Browser runtime errors');
   report.status = 'passed';
   await send('Browser.close');
